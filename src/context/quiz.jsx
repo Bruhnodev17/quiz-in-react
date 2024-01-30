@@ -31,8 +31,15 @@ const quizReducer = (state, action) => {
       case "CHANGE_QUESTION":
         // eslint-disable-next-line no-case-declarations
         const nextQuestion = state.currentQuestion + 1
+        // eslint-disable-next-line no-case-declarations
+        let endGame = false 
+          if(!questions[nextQuestion]){
+            endGame = true
+          }
+
           return {
-            ...state, currentQuestion: nextQuestion
+            ...state, currentQuestion: nextQuestion,
+            gameStage: endGame ? STAGES[2] : state.gameStage,
           }
 
     default:
