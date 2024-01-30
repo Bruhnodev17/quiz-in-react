@@ -28,6 +28,13 @@ const quizReducer = (state, action) => {
         questions: reorderedQuestions
       }
 
+      case "CHANGE_QUESTION":
+        // eslint-disable-next-line no-case-declarations
+        const nextQuestion = state.currentQuestion + 1
+          return {
+            ...state, currentQuestion: nextQuestion
+          }
+
     default:
         return state
   }
