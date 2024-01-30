@@ -9,7 +9,6 @@ const GameOver = () => {
 
     const [quizState, dispatch] = useContext(Quizcontext)
 
-
   return (
     <div id='gameover'>
       <h2>Fim de Jogo! 🐱‍🏍</h2>
